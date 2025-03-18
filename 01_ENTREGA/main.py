@@ -23,34 +23,35 @@ pulsador.irq(trigger=Pin.IRQ_RISING,handler=interrupcion)
 GPIO_SET=const(0x3FF44004)
 
 while True:
-    mem32[GPIO_SET]=0b010000000000100 #enciende rojopeatonal y verdevehicular
+    mem32[GPIO_SET]=0b0001000100000000000000000000000000000000 #enciende rojopeatonal y verdevehicular
     sleep(5)
-    mem32[GPIO_SET]=0B000000000000100 #inicia parpadeo de verdevehicular
+    mem32[GPIO_SET]=0B0001000000000000000000000000000000000000 #inicia parpadeo de verdevehicular
     sleep(0.5)
-    mem32[GPIO_SET]=0B010000000000100
+    mem32[GPIO_SET]=0B0001000100000000000000000000000000000000
     sleep(0.5)
-    mem32[GPIO_SET]=0B000000000000100
+    mem32[GPIO_SET]=0B0001000000000000000000000000000000000000
     sleep(0.5)
-    mem32[GPIO_SET]=0B010000000000100
+    mem32[GPIO_SET]=0B0001000100000000000000000000000000000000
     sleep(0.5)
-    mem32[GPIO_SET]=0B000000000000100
+    mem32[GPIO_SET]=0B0001000000000000000000000000000000000000
     sleep(0.5)
-    mem32[GPIO_SET]=0B001000000000100 # amariilo y rojo peatonal
+    mem32[GPIO_SET]=0B0001100000000000000000000000000000000000 # amariilo y rojo peatonal
     sleep(2)
-    mem32[GPIO_SET]=0B000000000000100
+    mem32[GPIO_SET]=0B0001000000000000000000000000000000000000
     sleep(0.5)
-    mem32[GPIO_SET]=0B100000000010000 # se enciende rojovehicular y verdepeatonal
+    mem32[GPIO_SET]=0B1000010000000000000000000000000000000000 # se enciende rojovehicular y verdepeatonal
     sleep(5)
-    mem32[GPIO_SET]=0B100000000000000 #parpadeo verdepeatonal
+    mem32[GPIO_SET]=0B1000010000000000000000000000000000000000 #parpadeo verdepeatonal
     sleep(0.5)
-    mem32[GPIO_SET]=0B100000000010000 
+    mem32[GPIO_SET]=0B0000010000000000000000000000000000000000
     sleep(0.5)
-    mem32[GPIO_SET]=0B100000000000000 
+    mem32[GPIO_SET]=0B1000010000000000000000000000000000000000
     sleep(0.5)
-    mem32[GPIO_SET]=0B010000000010000 # se enciende verde peatonal (opcional)
+    #mem32[GPIO_SET]=0B010000000010000 # se enciende verde peatonal (opcional)
     sleep(0.5)
     if variable==1:
         mem32[GPIO_SET]=0b10000000000100
         sleep(10)
         variable=0
+   
         #sleep(0.5) #yo lo añadi
